@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/luisedgtz/FintalServer/issues"
   },
-  "homepage": "https://github.com/luisedgtz/FintalServer#readme"
+  "homepage": "https://github.com/luisedgtz/FintalServer#readme",
+  "dependencies": {
+    "belvo": "^0.16.1",
+    "express": "^4.17.1"
+  }
 }
