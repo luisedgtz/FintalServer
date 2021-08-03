@@ -14,6 +14,27 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.get('/getAccounts' , (req, res) => {
+  client.connect()
+  .then(function () {
+    client.accounts.list()
+    .then(function (response) {
+      var accounts = [];
+      for (i = 0; i < response.length; i++) {
+        if (req.query.link == response[i].link) {
+          accounts.push(response[i]);
+        }
+      }
+      res.json(accounts);
+    })
+    .catch(function (error) {
+      res.status(401).send({
+        message: error.message
+      });
+    });
+  });
+});
+
 app.get('/getAccessToken', (req, res) => {
   client.connect()
     .then(function () {
@@ -30,5 +51,5 @@ app.get('/getAccessToken', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`)
+  console.log(`App listening on port ${port}!`)
 });
