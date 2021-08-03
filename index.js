@@ -2,7 +2,7 @@ var belvo = require('belvo').default
 
 const express = require('express')
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 var client = new belvo(
   'ab4fd7e8-f660-4706-9766-75c48b5c94d7',
