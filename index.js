@@ -5,8 +5,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 var client = new belvo(
-  'ab4fd7e8-f660-4706-9766-75c48b5c94d7',
-  '29h2bWWa8wsGc154M*VUo5lZhG*Zwmob1R*Es4NSAiF#iKerLq5g9Gi8eD@mBXtK',
+  '9b949107-1f2e-4170-9455-13f965db91ef',
+  'V60YJXFlZB7jN#omEcNAXEM@Xs9Ezvic5q5sXZf7Ixaz4EvBlnRgE2UQiv@Ph28B',
   'https://sandbox.belvo.com'
 );
 
