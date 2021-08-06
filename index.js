@@ -14,6 +14,27 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.get('/getTransactions' , (req, res) => {
+  client.connect()
+  .then(function () {
+    client.transactions.list()
+    .then(function (response) {
+      var transactions = [];
+      for (i = 0; i < response.length; i++) {
+        if (req.query.id == response[i].account.id) {
+          transactions.push(response[i])
+        }
+      }
+      res.json(response);
+    })
+    .catch(function (error) {
+      res.status(401).send({
+        message: error.message
+      })
+    })
+  })
+})
+
 app.get('/getAccounts' , (req, res) => {
   client.connect()
   .then(function () {
