@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 var client = new belvo(
   'ab4fd7e8-f660-4706-9766-75c48b5c94d7',
   '29h2bWWa8wsGc154M*VUo5lZhG*Zwmob1R*Es4NSAiF#iKerLq5g9Gi8eD@mBXtK',
-  'https://development.belvo.com'
+  'https://sandbox.belvo.com'
 );
 
 app.get('/', (req, res) => {
